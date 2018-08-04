@@ -79,7 +79,7 @@ html, body{
 .zhu-img{
     width: 100%;
     height: 600px;
-    background: url("../images/da_img.jpg") no-repeat fixed;
+    background: url("../images/zhu.jpg") no-repeat fixed;
     background-size: cover;
     z-index: -1;
 }
@@ -215,35 +215,35 @@ html, body{
 }
 
 .dom-top li:nth-child(1) a{
-    background: url("../images/dom_top_01.png");
+    background: url("../images/wen1.jpg");
     background-size: cover;
 }
 .dom-top li:nth-child(2) a{
-    background: url("../images/guanggao4.jpg");
+    background: url("../images/wen2.jpg");
     background-size: cover;
 }
 .dom-top li:nth-child(3) a{
-    background: url("../images/dom_top_03.png");
+    background: url("../images/wen3.jpg");
     background-size: cover;
 }
 .dom-top li:nth-child(4) a{
-    background: url("../images/zhu.jpg");
+    background: url("../images/wen4.jpg");
     background-size: cover;
 }
 .dom-top li:nth-child(5) a{
-    background: url("../images/zhu2.jpg");
+    background: url("../images/wen5.jpg");
     background-size: cover;
 }
 .dom-top li:nth-child(6) a{
-    background: url("../images/zhu3.jpg");
+    background: url("../images/wen6.jpg");
     background-size: cover;
 }
 .dom-top li:nth-child(7) a{
-    background: url("../images/mainimg.jpg");
+    background: url("../images/wen7.jpg");
     background-size: cover;
 }
 .dom-top li:nth-child(8) a{
-    background: url("../images/test.jpg");
+    background: url("../images/wen8.jpg");
     background-size: cover;
 }
 /**选项卡样式**/
