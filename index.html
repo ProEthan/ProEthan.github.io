@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小博客</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!--用class做样式，用id做js-->
+<div id="page" class="page">
+    <!--头部在路上-->
+    <div class="head">
+        <div class="head-in">
+            <a href="#"></a>
+            <h1>World</h1>
+        </div>
+    </div>
+    <!--吸顶效果-->
+    <section id="top_nav" class="top-nav">
+        <div class="top-nav-in">
+            <ul>
+                <li class="current"><a href="#">首页</a></li>
+                <li><a href="#">文章</a></li>
+                <li><a href="#">项目</a></li>
+                <li><a href="#">科研</a></li>
+            </ul>
+        </div>
+    </section>
+    <!--图片-->
+    <div class="zhu-img" id="zhu_img"></div>
+    <!--类型标题-->
+    <section id="type_title" class="type-title">
+        <div class="type-title-in">
+            <span class="line-left"></span>
+            <span>Welcome</span>
+            <span class="line-right"></span>
+        </div>
+    </section>
+    <!--选项卡-->
+    <div id="tab" class="tab">
+        <div id="tab_header" class="tab-header">
+            <ul>
+                <li class="current">文章</li>
+                <li>项目</li>
+            </ul>
+        </div>
+        <div id="tab_content" class="tab-content">
+            <div class="dom" style="display: block">
+                <div class="dom-top">
+                    <ul>
+                        <li><a href="#" title="做生活的设计师"><span class="title">做生活的设计师</span></a></li>
+                        <li><a href="#" title="句子的温度"><span class="title">句子的温度</span></a></li>
+                        <li><a href="#" title="每天送自己一句话"><span class="title">每天送自己一句话</span></a></li>
+                        <li><a href="#" title="笔尖的思绪"><span class="title">笔尖的思绪</span></a></li>
+                        <li><a href="#" title="做生活的设计师"><span class="title">做生活的设计师</span></a></li>
+                        <li><a href="#" title="句子的温度"><span class="title">句子的温度</span></a></li>
+                        <li><a href="#" title="每天送自己一句话"><span class="title">每天送自己一句话</span></a></li>
+                        <li><a href="#" title="笔尖的思绪"><span class="title">笔尖的思绪</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dom">
+                第二个
+            </div>
+            <div class="dom">
+                第三个
+            </div>
+        </div>
+    </div>
+</div>
+<!--右边浮动-->
+<div id="elevator_item" class="elevator-item">
+    <a href="#" id="elevator" class="elevator" title="回到顶部">顶</a><br>
+    <a href="#" class="plus">+</a>
+</div>
+<script src="js/index.js"></script>
+</body>
+</html>

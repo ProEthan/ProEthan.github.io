@@ -1,0 +1,312 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;   /* 去除li的点 */
+    vertical-align: top;   /* 去除图片间距 */
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.page{
+    width: 100%;
+    height: auto;
+    z-index: -2;
+}
+
+/*头部*/
+.head{
+    width: 100%;
+    height: 84px;
+    border-bottom: 1px solid #cccccc;
+    position: relative;
+}
+.head .head-in{
+    width: 180px;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -75px;
+    margin-top: -20px;
+}
+.head .head-in a{
+    width: 40px;
+    height: 40px;
+    background: url("../images/logo1.png");
+    background-size: cover;
+    display: inline-block;
+    float: left;
+}
+.head .head-in h1{
+    margin-left: 10px;
+    float: left;
+}
+/*头部*/
+
+/*吸顶效果*/
+.top-nav{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #cccccc;
+    background-color: #ffffff;
+    z-index: 999;
+}
+
+.top-nav .top-nav-in{
+    width: 400px;
+    height: 50px;
+    margin: 0 auto;
+}
+.top-nav .top-nav-in ul li{
+    float: left;
+    width: 100px;
+    text-align: center;
+}
+.top-nav .top-nav-in ul li a{
+    line-height: 50px;
+    text-decoration: none;
+    color: #444444;
+    font-size: 15px;
+    font-weight: 500;
+}
+/*吸顶效果*/
+
+/*大图片样式*/
+.zhu-img{
+    width: 100%;
+    height: 600px;
+    background: url("../images/da_img.jpg") no-repeat fixed;
+    background-size: cover;
+    z-index: -1;
+}
+
+.zhu-img img{
+
+}
+/*大图片样式*/
+
+.none{
+    height: 450px;
+    z-index: -2;
+}
+
+/**类型标题样式**/
+.type-title{
+    width: 100%;
+    height: 130px;
+}
+
+.type-title .type-title-in{
+    position: relative;
+    width: 270px;
+    height: 100%;
+    margin: 0 auto;
+    /*background-color: green;*/
+    text-align: center;
+    line-height: 130px;
+    font-size: 30px;
+    color: #333;
+}
+
+.type-title .type-title-in .line-left{
+    width: 48px;
+    border-top: 1px solid #ccc;
+    position: absolute;
+    left: 10px;
+    top: 65px;
+}
+
+.type-title .type-title-in .line-right{
+    width: 48px;
+    border-top: 1px solid #ccc;
+    position: absolute;
+    right: 10px;
+    top: 65px;
+}
+/**类型标题样式**/
+
+
+/**选项卡样式**/
+.tab{
+    width: 100%;
+    height: auto;
+}
+
+.tab .tab-header{
+    width: 200px;
+    height: 48px;
+    margin: 0 auto;
+}
+
+.tab .tab-header ul li{
+    float: left;
+    width: 100px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.tab .tab-header ul li.current{
+    border-bottom: 1px solid orangered;
+    color: orangered;
+}
+
+.tab .tab-content{
+    width: 100%;
+    background-color: #e8e8e8;
+}
+
+.tab .tab-content .dom{
+    display: none;
+    height: 1000px;
+}
+
+.tab .tab-content .dom:nth-child(1){
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.tab .tab-content .dom:nth-child(2){
+    width: 100%;
+    background-color: green;
+}
+
+.tab .tab-content .dom:nth-child(3){
+    width: 100%;
+    background-color: blue;
+}
+
+.dom-top{
+    width: 80%;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.dom-top li{
+    width: 23%;
+    height: 180px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .8);
+    float: left;
+    margin: 30px 1% auto;
+}
+
+.dom-top li a{
+    width: 100%;
+    height: 180px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dom-top li a .title{
+    width: 100%;
+    margin-top: 0;
+    line-height: 25px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    text-align: center;
+    display: inline-block;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.dom-top li:nth-child(1) a{
+    background: url("../images/dom_top_01.png");
+    background-size: cover;
+}
+.dom-top li:nth-child(2) a{
+    background: url("../images/guanggao4.jpg");
+    background-size: cover;
+}
+.dom-top li:nth-child(3) a{
+    background: url("../images/dom_top_03.png");
+    background-size: cover;
+}
+.dom-top li:nth-child(4) a{
+    background: url("../images/zhu.jpg");
+    background-size: cover;
+}
+.dom-top li:nth-child(5) a{
+    background: url("../images/zhu2.jpg");
+    background-size: cover;
+}
+.dom-top li:nth-child(6) a{
+    background: url("../images/zhu3.jpg");
+    background-size: cover;
+}
+.dom-top li:nth-child(7) a{
+    background: url("../images/mainimg.jpg");
+    background-size: cover;
+}
+.dom-top li:nth-child(8) a{
+    background: url("../images/test.jpg");
+    background-size: cover;
+}
+/**选项卡样式**/
+
+
+/*右下角回到顶部样式*/
+.elevator-item{
+    position: fixed;
+    right: 15px;
+    bottom: 10px;
+    z-index: 1000;
+    opacity: 1;
+}
+
+.elevator-item .elevator{
+    width: 40px;
+    height: 36px;
+    background-color: #444444;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.6); /*透明度*/
+    border-radius: 4px;
+    margin-bottom: 1px;
+    display: none;
+}
+
+.elevator-item .elevator:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.elevator-item .plus{
+    width: 40px;
+    height: 36px;
+    background-color: #444444;
+    line-height: 35px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.6); /*透明度*/
+    border-radius: 4px;
+}
+
+.elevator-item .plus:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
