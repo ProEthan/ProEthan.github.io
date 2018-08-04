@@ -57,7 +57,7 @@ html, body{
 }
 
 .top-nav .top-nav-in{
-    width: 400px;
+    width: 300px;
     height: 50px;
     margin: 0 auto;
 }
@@ -66,12 +66,18 @@ html, body{
     width: 100px;
     text-align: center;
 }
+.top-nav .top-nav-in ul li:hover{
+    background-color: #f2f2f2;
+}
 .top-nav .top-nav-in ul li a{
     line-height: 50px;
     text-decoration: none;
     color: #444444;
     font-size: 15px;
     font-weight: 500;
+}
+.top-nav .top-nav-in ul li a:hover{
+    color: #d16262;
 }
 /*吸顶效果*/
 
@@ -151,6 +157,10 @@ html, body{
     cursor: pointer;
 }
 
+.tab .tab-header ul li:hover{
+    color: orangered;
+}
+
 .tab .tab-header ul li.current{
     border-bottom: 1px solid orangered;
     color: orangered;
@@ -158,12 +168,11 @@ html, body{
 
 .tab .tab-content{
     width: 100%;
-    background-color: #e8e8e8;
 }
 
 .tab .tab-content .dom{
     display: none;
-    height: 1000px;
+    height: 480px;
 }
 
 .tab .tab-content .dom:nth-child(1){
@@ -173,7 +182,6 @@ html, body{
 
 .tab .tab-content .dom:nth-child(2){
     width: 100%;
-    background-color: green;
 }
 
 .tab .tab-content .dom:nth-child(3){
@@ -181,14 +189,28 @@ html, body{
     background-color: blue;
 }
 
-.dom-top{
+.dom-top-01{
     width: 80%;
     padding: 10px;
     margin: 0 auto;
 }
 
-.dom-top li{
+.dom-top-01 li{
     width: 23%;
+    height: 180px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .8);
+    float: left;
+    margin: 30px 1% auto;
+}
+
+.dom-top-02{
+    width: 80%;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.dom-top-02 li{
+    width: 30%;
     height: 180px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .8);
     float: left;
@@ -214,39 +236,88 @@ html, body{
     background-color: rgba(0, 0, 0, .2);
 }
 
-.dom-top li:nth-child(1) a{
+.dom-top-01 li:nth-child(1) a{
     background: url("../images/wen1.jpg");
     background-size: cover;
 }
-.dom-top li:nth-child(2) a{
+.dom-top-01 li:nth-child(2) a{
     background: url("../images/wen2.jpg");
     background-size: cover;
 }
-.dom-top li:nth-child(3) a{
+.dom-top-01 li:nth-child(3) a{
     background: url("../images/wen3.jpg");
     background-size: cover;
 }
-.dom-top li:nth-child(4) a{
+.dom-top-01 li:nth-child(4) a{
     background: url("../images/wen4.jpg");
     background-size: cover;
 }
-.dom-top li:nth-child(5) a{
+.dom-top-01 li:nth-child(5) a{
     background: url("../images/wen5.jpg");
     background-size: cover;
 }
-.dom-top li:nth-child(6) a{
+.dom-top-01 li:nth-child(6) a{
     background: url("../images/wen6.jpg");
     background-size: cover;
 }
-.dom-top li:nth-child(7) a{
+.dom-top-01 li:nth-child(7) a{
     background: url("../images/wen7.jpg");
     background-size: cover;
 }
-.dom-top li:nth-child(8) a{
+.dom-top-01 li:nth-child(8) a{
     background: url("../images/wen8.jpg");
     background-size: cover;
 }
+
+.dom-top-02 li:nth-child(1) a{
+    background: url("../images/proj1.png");
+    background-size: cover;
+}
+.dom-top-02 li:nth-child(2) a{
+    background: url("../images/proj2.png");
+    background-size: cover;
+}
+.dom-top-02 li:nth-child(3) a{
+    background: url("../images/proj.jpg");
+    background-size: cover;
+}
+.dom-top-02 li:nth-child(4) a{
+    background: url("../images/start.jpeg");
+    background-size: cover;
+}
+.dom-top-02 li:nth-child(5) a{
+    background: url("../images/data.png");
+    background-size: cover;
+}
+.dom-top-02 li:nth-child(6) a{
+    background: url("../images/proj3.jpg");
+    background-size: cover;
+}
 /**选项卡样式**/
+
+/*查看更多*/
+.more-wen{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+}
+.more-wen .more-wen-in span:hover{
+    background-color: #363b3f;
+    color: #ffffff;
+}
+.more-wen .more-wen-in span{
+    width: 120px;
+    height: 40px;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    display: inline-block;
+    padding-top: 15px;
+    font-size: 18px;
+    color: #363b3f;
+    cursor: pointer;
+}
+
+/*查看更多*/
 
 
 /*右下角回到顶部样式*/
@@ -293,6 +364,15 @@ html, body{
 
 .elevator-item .plus:hover{
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/*尾部*/
+.foot{
+    width: 100%;
+    height: 300px;
+    background-color: #333333;
+    margin-top: 100px;
 }
 
 

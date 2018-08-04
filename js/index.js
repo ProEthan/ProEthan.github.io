@@ -6,9 +6,6 @@
     // 2，动态创建元素
     autoCreateImg();
 
-
-
-
     // 5, 窗口的滚动
     window.onscroll=function () {
         // 判断是否吸顶
@@ -51,7 +48,7 @@ function ___getPageScroll() {
 };
 
 
-// 自动创建图片
+// 动态创建元素
 function autoCreateImg() {
 
 }
