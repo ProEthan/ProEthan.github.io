@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>测试文章</title>
+    <title>行者无疆 | 测试文章</title>
+    <link rel="stylesheet" href="css/essay.css">
     <link rel="stylesheet" href="css/essaydetail.css">
     <link rel="stylesheet" href="css/testessay.css">
 </head>
@@ -58,7 +59,6 @@
                         <h3>近期文章</h3>
                         <ul>
                             <li><a href="testessay.html">测试文章</a></li>
-                            <li><a href="testessay.html">测试文章</a></li>
                         </ul>
                     </aside>
                     <aside class="widget">
@@ -70,37 +70,77 @@
                     <aside class="widget">
                         <h3>分类目录</h3>
                         <ul>
-                            <li><a href="">数据视界</a></li>
-                            <li><a href="">应用开发</a></li>
-                            <li><a href="">3D建模</a></li>
-                            <li><a href="">计算机视觉</a></li>
-                            <li><a href="">算法珠玑</a></li>
+                            <li><a href="essay.html">数据视界</a></li>
+                            <li><a href="essay.html">应用开发</a></li>
+                            <li><a href="essay.html">3D建模</a></li>
+                            <li><a href="essay.html">计算机视觉</a></li>
+                            <li><a href="essay.html">算法珠玑</a></li>
                         </ul>
                     </aside>
                 </div>
-                <div class="zhengwen">
-                    <article>
+                <!--文章-->
+                <div class="col-right">
+                    <article class="essay-introduce">
+                        <!--文章头部-->
                         <header>
-                            <h3>
-                                <i>文</i>
-                                <span>测试文章</span>
+                            <h3 class="essay-name">
+                                <i class="fa-pencil">文</i>
+                                <a href="testessay.html">测试文章</a>
                             </h3>
-                            <p></p>
+                            <!--文章归属等信息-->
+                            <p class="essay-information">
+                                <a href="essay.html">灌水区</a>
+                                -BY-
+                                <a href="index.html">ProEthan</a>
+                            </p>
                         </header>
-                        <p>绘图中的说明元素除了坐标轴标签、刻度线和图例等，还可以包括自由添加的图形元素和说明文本，这些注解可以为你的读者提供更多的信息。
-                            1 添加文本注解
-                            使用annotate()生成一条文本注解，通过x和y指定文本位置，可以是具体数值或者Inf和-Inf，表示图形的边缘，使用hjust和vjust进行水平方向和竖直方向上的微调，使用family、color、size分别指定字体、颜色、大小。</p>
+                        <!--正文-->
+                        <p>
+                            最近要在centos上搭LAMP环境，顺手也记录一下。
+                            1 Apache 使用yum安装Apache。 yum install httpd 1yum install ht
+                            最近要在centos上搭LAMP环境，顺手也记录一下。 1 Apache 使用yum安装Apache。
+                            yum install httpd 1yum install httpd 修改防火墙配置，
+                            打开80端口，可以顺便把MySQL的3306也打开 v…</p>
+                        <p>
+                            最近要在centos上搭LAMP环境，顺手也记录一下。
+                            1 Apache 使用yum安装Apache。 yum install httpd 1yum install ht
+                            最近要在centos上搭LAMP环境，顺手也记录一下。 1 Apache 使用yum安装Apache。
+                            yum install httpd 1yum install httpd 修改防火墙配置，
+                            打开80端口，可以顺便把MySQL的3306也打开 v…</p>
+                        <p>
+                            最近要在centos上搭LAMP环境，顺手也记录一下。
+                            1 Apache 使用yum安装Apache。 yum install httpd 1yum install ht
+                            最近要在centos上搭LAMP环境，顺手也记录一下。 1 Apache 使用yum安装Apache。
+                            yum install httpd 1yum install httpd 修改防火墙配置，
+                            打开80端口，可以顺便把MySQL的3306也打开 v…</p>
+                        <p>
+                            最近要在centos上搭LAMP环境，顺手也记录一下。
+                            1 Apache 使用yum安装Apache。 yum install httpd 1yum install ht
+                            最近要在centos上搭LAMP环境，顺手也记录一下。 1 Apache 使用yum安装Apache。
+                            yum install httpd 1yum install httpd 修改防火墙配置，
+                            打开80端口，可以顺便把MySQL的3306也打开 v…</p>
+                        <!--文章标签-->
+                        <p class="tags">
+                            <i class="fa-tags"></i>
+                            <a href="#">lamp</a>
+                        </p>
+                        <!--文章日期-->
                         <div class="date">
                             <span class="day">5</span>
                             <span class="month">2018-8</span>
                         </div>
                     </article>
+                    <!--上一篇，下一篇-->
                     <nav></nav>
+                    <!--评论-->
                     <div class="comments"></div>
                 </div>
             </div>
         </div>
     </section>
+</div>
+<div id="elevator_item" class="elevator-item">
+    <a href="#" id="elevator" class="elevator" title="回到顶部">顶</a><br>
 </div>
 <footer class="foot">
     <div class="container">
@@ -110,5 +150,6 @@
     </div>
 </footer>
 <script src="js/testessay.js"></script>
+<script src="js/essay.js"></script>
 </body>
 </html>
