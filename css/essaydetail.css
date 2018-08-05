@@ -163,6 +163,8 @@ html, body{
 }
 /*搜索板样式*/
 
+
+
 /*主体样式*/
 .main-page{
     width: 100%;
@@ -229,43 +231,29 @@ html, body{
     font-size: 14px;
     line-height: 21px;
 }.main-page .container .row .col-left ul li a:hover{
-    color: #d16262;
+     color: #d16262;
  }
 /*左边样式*/
 
 
 /*右边样式*/
-.main-page .container .row .col-right{
+.zhengwen{
     width: 72%;
-    height: 800px;
     box-sizing: border-box;
-    display: block;
+    display: inline-block;
     margin-top: 50px;
     float: right;
     position: relative;
     min-height: 1px;
     padding-right: 15px;
-    padding-left: 15px;
+    padding-left: 75px;
 }
-.main-page .container .row .col-right .essay-introduce{
-    padding-left: 0;
-    width: 100%;
-    display: inline-block;
-    position: relative;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border: 0 solid #e5e5e5;
-    border-bottom-width: 1px;
-}
-.main-page .container .row .col-right .essay-introduce header{
+.zhengwen header{
     width: 100%;
     display: inline-block;
     margin-bottom: 15px;
 }
-.main-page .container .row .col-right .essay-introduce header h3{
+.zhengwen header h3{
     margin: 0;
     padding: 0;
     width: 100%;
@@ -277,7 +265,7 @@ html, body{
     padding-left: 40px;
     cursor: pointer;
 }
-.main-page .container .row .col-right .essay-introduce header h3 .fa-pencil{
+.zhengwen header h3 i{
     width: 30px;
     height: 30px;
     line-height: 30px;
@@ -292,8 +280,7 @@ html, body{
     top: 0;
     background-color: #e14d43;
 }
-.main-page .container .row .col-right .essay-introduce header h3 a{
-    display: inline-block;
+.zhengwen header h3 span{
     float: left;
     line-height: 30px;
     color: #333;
@@ -301,93 +288,37 @@ html, body{
     font-size: 24px;
     font-weight: 400;
     text-align: left;
-    text-decoration-color: rgb(51, 51, 51);
-    text-decoration: none;
 }
-.main-page .container .row .col-right .essay-introduce header h3 a:hover{
-    color: #d16262;
-}
-.main-page .container .row .col-right .essay-introduce header p{
-    color: #d16262;
-}
-.main-page .container .row .col-right .essay-introduce .essay-begin{
+p{
+    line-height: 21px;
+    color: #3e3e3e;
     font-family: Opensans-Light;
     font-size: 14px;
-    line-height: 21px;
+    margin-bottom: 10px;
     text-align: left;
 }
-.main-page .container .row .col-right .essay-introduce .quanwen{
-    margin: 10px 0 10px;
-    display: block;
-    text-align: left;
-    cursor: pointer;
+.zhengwen .date{
+    position: absolute;
+    width: 60px;
+    left: 0;
+    top: 0;
 }
-.main-page .container .row .col-right .essay-introduce .quanwen:hover{
-    color: #d16262;
+.zhengwen .date .day{
+    font-size: 180%;
+    color: #333;
+    font-weight: bold;
 }
-.main-page .container .row .col-right .essay-introduce .quanwen a{
-    font-family: Opensans-Light;
-    font-size: 13px;
-    line-height: 25px;
-    text-align: center;
-    border: 1px solid #111111;
-    border-radius: 5px;
-    padding: 4px 10px;
-    text-decoration: none;
-    color: #111111;
-}
-.main-page .container .row .col-right .essay-introduce .quanwen a:hover{
-    box-shadow: 1px 2px 3px #cccccc;
-    color: orangered;
-}
-.main-page .container .row .col-right .essay-introduce .tags{
-    margin-top: 10px;
-}
-.main-page .container .row .col-right .essay-introduce .tags i{
-    width: 10px;
-    height: 10px;
-    display: inline-block;
+.zhengwen .date span{
+    width: 100%;
     float: left;
-    background-color: #e14d43;
-    margin-top: 5px;
-    margin-left: 2px;
+    text-align: center;
+    line-height: 30px;
 }
-.main-page .container .row .col-right .essay-introduce .tags a{
-    font-family: Opensans-Light;
-    font-size: 13px;
-    line-height: 21px;
-    text-align: left;
-    margin-left: 2px;
-    text-decoration: none;
-    cursor: pointer;
-    color: #111111;
+.zhengwen .date .month{
+    border-top-color: #e14d43;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-top-width: 1px;
+    border-top-style: solid;
+    font-size: 80%;
 }
-.main-page .container .row .col-right .essay-introduce .tags a:hover{
-    color: #d16262;
-}
-/*右边样式*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
