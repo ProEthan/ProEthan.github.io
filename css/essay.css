@@ -242,7 +242,8 @@ p{
     font-family: Opensans-Light;
     font-size: 14px;
     line-height: 21px;
-    text-align: left;
+    letter-spacing: 1px;
+    text-align: justify;
     margin-bottom: 10px;
     color: #4e4e4e;
 }
@@ -273,7 +274,7 @@ p{
 .main-page .container .row .col-right .essay-introduce header{
     width: 100%;
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 0;
 }
 .main-page .container .row .col-right .essay-introduce header h3{
     margin: 0;
@@ -376,10 +377,11 @@ p{
     margin-left: 2px;
     text-decoration: none;
     cursor: pointer;
-    color: #111111;
+    color: #f99292;
 }
 .main-page .container .row .col-right .essay-introduce .tags a:hover{
     color: #d16262;
+    text-decoration: underline;
 }
 .main-page .container .row .col-right .essay-introduce .date{
     position: absolute;

@@ -9,22 +9,25 @@
     // 5, 窗口的滚动
     window.onscroll=function () {
         // 判断是否吸顶
-        var scrollTopArr=___getPageScroll();
-        var scrollTop=scrollTopArr[1];
+        const scrollTopArr=___getPageScroll(),
+            scrollTop=scrollTopArr[1],
+            top_nav=$("top_nav"),
+            zhu_img=$("zhu_img"),
+            elevator=$("elevator");
         if(scrollTop>=85){
-            $("top_nav").style.position="fixed";
-            $("top_nav").style.top="0";
-            $("zhu_img").style.marginTop="50px";
-            $("elevator").style.display="block";
+            top_nav.style.position="fixed";
+            top_nav.style.top="0";
+            zhu_img.style.marginTop="50px";
+            elevator.style.display="block";
         }
         else{
-            $("top_nav").style.position="";
-            $("zhu_img").style.marginTop="0";
-            $("elevator").style.display="none";
+            top_nav.style.position="";
+            zhu_img.style.marginTop="0";
+            elevator.style.display="none";
         }
 
         // 滚回顶部
-        $("elevator").onclick=function () {
+        elevator.onclick=function () {
             document.documentElement.scrollTop=0;
         }
     }
@@ -32,7 +35,7 @@
 
 // 得到滚动距离
 function ___getPageScroll() {
-    var xScroll, yScroll;
+    let xScroll, yScroll;
     if (self.pageYOffset) {
         yScroll = self.pageYOffset;
         xScroll = self.pageXOffset;
@@ -43,9 +46,9 @@ function ___getPageScroll() {
         yScroll = document.body.scrollTop;
         xScroll = document.body.scrollLeft;
     }
-    arrayPageScroll = new Array(xScroll,yScroll);
+    let arrayPageScroll = new Array(xScroll,yScroll);
     return arrayPageScroll;
-};
+}
 
 
 // 动态创建元素
@@ -56,13 +59,13 @@ function autoCreateImg() {
 // 选项卡
 function tab(){
     // 1，获取需要的标签
-    var allLis=$("tab_header").getElementsByTagName("li");
-    var doms=$("tab_content").getElementsByClassName("dom");
-    var lastOne=0;
+    const allLis=$("tab_header").getElementsByTagName("li"),
+        doms=$("tab_content").getElementsByClassName("dom");
+    let lastOne=0;
 
     // 2，遍历监听
-    for(var i=0;i<allLis.length;i++){
-        var li=allLis[i];
+    for(let i=0;i<allLis.length;i++){
+        let li=allLis[i];
         (function (i) {
             li.onmousedown=function () {
                 // 1，清除样式

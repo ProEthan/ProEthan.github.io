@@ -33,7 +33,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <form class="search" method="get" action="#">
+                    <form class="search" id="search" method="get" action="#">
                         <input type="text" placeholder="请输入关键词" id="sou" class="sou" value="">
                         <button type="submit" value="search">搜索</button>
                     </form>
@@ -71,7 +71,7 @@
                         <h3>分类目录</h3>
                         <ul>
                             <li><a href="essay.html">数据视界</a></li>
-                            <li><a href="essay.html">应用开发</a></li>
+                            <li><a href="essay.html">灌水区</a></li>
                             <li><a href="essay.html">3D建模</a></li>
                             <li><a href="essay.html">计算机视觉</a></li>
                             <li><a href="essay.html">算法珠玑</a></li>
@@ -95,30 +95,25 @@
                             </p>
                         </header>
                         <!--正文-->
+                        <p>React Native 结合了 Web 应用和 Native 应用的优势，可以使用 JavaScript 来开发 iOS 和 Android 原生应用。</p>
+                        <img src="images/data.png" width="334" height="197" style="margin: 10px 10px; opacity: 0.7;">
                         <p>
-                            最近要在centos上搭LAMP环境，顺手也记录一下。
-                            1 Apache 使用yum安装Apache。 yum install httpd 1yum install ht
-                            最近要在centos上搭LAMP环境，顺手也记录一下。 1 Apache 使用yum安装Apache。
-                            yum install httpd 1yum install httpd 修改防火墙配置，
-                            打开80端口，可以顺便把MySQL的3306也打开 v…</p>
+                            Q：如何读写文件？如何调用摄像头？如何调用麦克风？等等<br>
+                            A：React Native本身只是一个界面库，没有任何额外的能力。对于官方没有提供的组件或API，可以自行在js.coach或github中搜索第三方实现。如果搜不到相关结果，你只能考虑自己用原生代码实现后整合进来。</p>
                         <p>
-                            最近要在centos上搭LAMP环境，顺手也记录一下。
-                            1 Apache 使用yum安装Apache。 yum install httpd 1yum install ht
-                            最近要在centos上搭LAMP环境，顺手也记录一下。 1 Apache 使用yum安装Apache。
-                            yum install httpd 1yum install httpd 修改防火墙配置，
-                            打开80端口，可以顺便把MySQL的3306也打开 v…</p>
+                            因为苹果公司强制规定ios开发必须用Mac操作系统，所以进行react Native开发要有苹果电脑才能发挥它的优势。</p>
                         <p>
-                            最近要在centos上搭LAMP环境，顺手也记录一下。
-                            1 Apache 使用yum安装Apache。 yum install httpd 1yum install ht
-                            最近要在centos上搭LAMP环境，顺手也记录一下。 1 Apache 使用yum安装Apache。
-                            yum install httpd 1yum install httpd 修改防火墙配置，
-                            打开80端口，可以顺便把MySQL的3306也打开 v…</p>
-                        <p>
-                            最近要在centos上搭LAMP环境，顺手也记录一下。
-                            1 Apache 使用yum安装Apache。 yum install httpd 1yum install ht
-                            最近要在centos上搭LAMP环境，顺手也记录一下。 1 Apache 使用yum安装Apache。
-                            yum install httpd 1yum install httpd 修改防火墙配置，
-                            打开80端口，可以顺便把MySQL的3306也打开 v…</p>
+                            应用邻域：<br>
+                            在Facebook F8开发者大会上，在和三星、微软的合作下，React Native应用能够为Windows、Xbox、智能电视和可穿戴设备编译使用。微软现已支持在Universal Windows Platform(UWP)平台上使用React Native框架，同样那些为Windows编译的应用程序也能访问React Native工具。</p>
+                        <p>不足之处：<br>
+                            1.组件不全，第三方组件也不全，遇到某些特殊功能，需要捣鼓很久。<br>
+                            2.性能并非媲美原生，还是有一些损耗的，特别是交换大数据的时候。<br>
+                            3.ios和android代码并非通用，有可能会需要维护两套，或者在代码内做一些判断。并非网上大家说的，写一次代码，多端通用，尤其是实际开发的时候，还是需要了解底层原理，自己开发跟原生桥接的组件，这个对普通前端来说是一个很大的挑战。</p>
+                        <p>react框架不追求所谓的“一次编写，随处运行 (Write once,run anywhere)”.
+                            React 认为不同的平台应该有不同的外观、感觉、功能等。
+                            开发者仍然需要为不同的平台去做一些额外的工作。<br>
+                            React把不同平台的能力分为跨平台的通用能力与平台特色能力，这样应用程序的代码也分成了跨平台部分和平台特色部分。
+                            React把这个方案叫做”一次学习，随处编写(Learn once,write anywhere)”</p>
                         <!--文章标签-->
                         <p class="tags">
                             <i class="fa-tags"></i>
