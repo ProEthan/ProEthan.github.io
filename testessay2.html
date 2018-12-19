@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行者无疆 | 测试文章</title>
+    <link rel="stylesheet" href="css/essay.css">
+    <link rel="stylesheet" href="css/essaydetail.css">
+    <link rel="stylesheet" href="css/testessay.css">
+</head>
+<body>
+<!--导航栏头部-->
+<header class="head">
+    <div class="head-in">
+        <a href="index.html" title="行者无疆">
+            <div class="head-logo">
+                <img src="images/logo1.png">
+                <p class="tag-line">ProEthan.Gao</p>
+                <p class="tag-dec">Always On the Road</p>
+            </div>
+        </a>
+        <nav class="menu-main">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="essay.html">文章</a></li>
+                <li><a href="#">项目</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!--主体-->
+<div class="content">
+    <section class="sousuo-board">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <form class="search" id="search" method="get" action="#">
+                        <input type="text" placeholder="请输入关键词" id="sou" class="sou" value="">
+                        <button type="submit" value="search">搜索</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-routh">
+        <!--<div class="container">-->
+        <!--<div class="row">-->
+        <!--<div class="col">-->
+        <!--<a href="#">Home</a>-->
+        <!--</div>-->
+        <!--<i></i>-->
+        <!--</div>-->
+        <!--</div>-->
+    </section>
+    <section class="main-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-left">
+                    <aside class="widget">
+                        <h3>近期文章</h3>
+                        <ul>
+                            <li><a href="testessay.html">测试文章</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="widget">
+                        <h3>文章归档</h3>
+                        <ul>
+                            <li><a href="essay.html">2018-8-5</a></li>
+                        </ul>
+                    </aside>
+                    <aside class="widget">
+                        <h3>分类目录</h3>
+                        <ul>
+                            <li><a href="essay.html">数据视界</a></li>
+                            <li><a href="essay.html">灌水区</a></li>
+                            <li><a href="essay.html">3D建模</a></li>
+                            <li><a href="essay.html">计算机视觉</a></li>
+                            <li><a href="essay.html">算法珠玑</a></li>
+                        </ul>
+                    </aside>
+                </div>
+                <!--文章-->
+                <div class="col-right">
+                    <article class="essay-introduce">
+                        <!--文章头部-->
+                        <header>
+                            <h3 class="essay-name">
+                                <i class="fa-pencil">文</i>
+                                <a href="testessay.html">无法登录scott用户的问题的原因和解决方法</a>
+                            </h3>
+                            <!--文章归属等信息-->
+                            <p class="essay-information">
+                                <a href="essay.html">灌水区</a>
+                                -BY-
+                                <a href="index.html">ProEthan</a>
+                            </p>
+                        </header>
+                        <!--正文-->
+						<br><br><br><h3>一、前言</h3><br><br>
+                        <p>最近电脑上安装了oracle 12c数据库，想体验下新特性。安装完后，便像11g一样在dos窗口进行下面的操作:</p><br>
+                        <p>
+                            sqlplus / as sysdba<br><br>
+							SQL> conn scott/tiger<br><br>
+							<img src="images/001.png" width="334" height="100" style="margin: 10px 10px;"><br><br>
+							<p>网上有许多 @H:\app\oracleuser\product\12.1.0\db_1\RDBMS\ADMIN\scott.sql 的解决方案，发现于我并没有什么卵用</p><br><br>
+							于是乎进行了以下尝试：<br><br>
+							SQL> alter user scott account unlock identified by tiger;<br><br>
+							<img src="images/02.png" width="334" height="122" style="margin: 10px 10px;"><br><br>
+							神马情况！难道没有SCOTT用户？用sql查了下，确实没查到（不是没有）：<br><br>
+							SQL> select username from dba_users where username like 'SCOTT';<br><br>
+							<img src="images/000.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
+							 哦，那我就自己建个吧（当时想多了o.o):<br><br>
+							 SQL> create user scott identified by tiger;<br><br>
+							 <img src="images/03.png" width="334" height="130" style="margin: 10px 10px;"><br><br>
+							 ，，，，，，<br><br>
+							 呵呵，刚刚接触12c的新手估计都会犯这样的错误吧。其实oracle 12c在结构上做出了调整，引入了CDB和PDB的概念。具体可以看下潇湘隐者的文章：<br><br>
+							 <a href="http://www.cnblogs.com/kerrycode/p/3386917.html">http://www.cnblogs.com/kerrycode/p/3386917.html</a>
+							 <br><br>
+							 其实，我刚才的操作是在CDB中的操作，用sys默认登录的是CDB,但是如果想在CDB中创建用户（可以理解为公共用户）的话，那么必须在用户名前面加上“c##”：<br><br>
+							 SQL> create user c##joker identified by joker;<br><br>
+							 <img src="images/04.png" width="334" height="100" style="margin: 10px 10px;"><br><br>
+							 oracle 这么做的目的是为了区分CDB的用户（前面带“c##”的用户）和PDB用户。那么问题来了，如何使用普通用户呢？网上查阅了很多资料，但都是说不清楚，今天总结下吧。<br><br>
+                        </p>
+						<h3>二、使用普通用户</h3><br><br>
+                        <p>
+                            其实，oracle 12c的普通用户必须在PDB下使用，PDB可以自己创建，也可以使用12c自带的。首先，查看下12c自带的PDB吧：<br><br>
+                            SQL>  select con_id, dbid, guid, name , open_mode from v$pdbs;<br><br>
+							<img src="images/05.png" width="334" height="222" style="margin: 10px 10px;"><br><br>
+                            要想链接到PDBORCLS，必须要在\app\oracleuser\product\12.1.0\db_1\NETWORK\ADMIN\tns.ora文件下加入如下内容：<br><br>
+							PDBORCLS =<br>
+								(DESCRIPTION =<br>
+								(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))<br>
+								(CONNECT_DATA =<br>
+								(SERVER = DEDICATED)<br>
+								(SERVICE_NAME = PDBORCLS)<br>
+								)<br>
+							)<br><br>
+							这样，我们就可以链接PDBORCLS了<br><br>
+							首先，要启动PDBORCLS，先用sys登录到CDB，进行如下操作：<br><br>
+							SQL> alter session set container = PDBORCLS;<br><br>
+							SQL> STARTUP<br><br>
+							<img src="images/06.png" width="334" height="166" style="margin: 10px 10px;"><br><br>
+							这样我们就可以用sys登录到PDBORCLS了：<br><br>
+							SQL> conn sys@pdborcls/admin  as sysdba<br><br>
+							<img src="images/07.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
+							我们查一下用没有SCOTT用户：<br><br>
+							SQL> select username from dba_users where username like '%SCOTT%';<br><br>
+							<img src="images/08.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
+							原来，SCOTT在PDBORCLS下。<br><br>
+							SQL> alter user scott account unlock identified by tiger;<br><br>
+							<img src="images/09.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
+							SQL> conn scott@pdborcls/tiger<br><br>
+							<img src="images/10.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
+							SQL> select ename,empno,job from emp offset 5 rows fetch next 5 rows only;<br><br>
+							<img src="images/11.png" width="334" height="155" style="margin: 10px 10px;"><br><br>
+							这样，我们就可以像11g那样使用像scott这样的普通用户了！<br><br>
+                        </p>
+						<h3>三、自动启动PDB</h3><br><br>
+						<p>
+							我们可以通过创建触发器的方式来自动启动PDB，用不着每次还得先用sys登录CDB,然后启动PDB。触发器代码如下：<br><br>
+							SQL> CREATE OR REPLACE TRIGGER open_all_pdbs  <br>
+							2   AFTER STARTUP  <br>
+							3   ON DATABASE  <br>
+							4  	BEGIN  <br>
+							5   EXECUTE IMMEDIATE 'alter pluggable database all open';  <br>
+							6   END open_all_pdbs;  <br>
+							7   /<br><br>
+							<img src="images/12.png" width="334" height="155" style="margin: 10px 10px;"><br><br>
+							SQL> shutdown immediate<br><br>
+							<img src="images/13.png" width="334" height="122" style="margin: 10px 10px;"><br><br>
+							SQL> startup<br><br>
+							<img src="images/14.png" width="334" height="155" style="margin: 10px 10px;"><br><br>
+							SQL> conn scott@pdborcls/tiger<br><br>
+							<img src="images/15.png" width="334" height="77" style="margin: 10px 10px;"><br><br>
+						</p>
+						<p>关于限制模式(restrict mode)的问题可以参见这篇博客~<br><br>
+							 <a href="https://blog.csdn.net/mengyan_0808/article/details/5870291">关于：无法连接到数据库实例: ORA-01035: ORACLE only available to users with RESTRICTED SESSION privilege</a>
+						</p><br><br>
+						<p>参考博客：
+							 <a href="http://www.th7.cn/db/Oracle/201508/114999.shtml">http://www.th7.cn/db/Oracle/201508/114999.shtml</a>
+						</p><br><br>
+                        <!--文章标签-->
+                        <p class="tags">
+                            <i class="fa-tags"></i>
+                            <a href="#">lamp</a>
+                        </p>
+                        <!--文章日期-->
+                        <div class="date">
+                            <span class="day">19</span>
+                            <span class="month">2018-12</span>
+                        </div>
+                    </article>
+                    <!--上一篇，下一篇-->
+                    <nav></nav>
+                    <!--评论-->
+                    <div class="comments"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="elevator_item" class="elevator-item">
+    <a href="#" id="elevator" class="elevator" title="回到顶部">顶</a><br>
+</div>
+<footer class="foot">
+    <div class="container">
+        <div class="col-1">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="https://github.com/proethan" class="github">交友网站Github</a></li>
+            </ul>
+        </div>
+        <div class="col-2">
+            <h3>文章Tags</h3>
+            <div class="wen-tags">
+                <a class="wen-tags-1">test</a>
+                <a class="wen-tags-1">openCV</a>
+                <a class="wen-tags-1">openGL</a>
+                <a class="wen-tags-1">linux</a>
+                <a class="wen-tags-1">java</a>
+                <a class="wen-tags-1">openGL</a>
+                <a class="wen-tags-2">ROS</a>
+                <a class="wen-tags-2">啥</a>
+                <a class="wen-tags-2">C++</a>
+                <a class="wen-tags-2">ML</a>
+                <a class="wen-tags-3">R</a>
+                <a class="wen-tags-3">汇总</a>
+            </div>
+        </div>
+        <div class="col-3">
+            <h3>联系</h3>
+            <a class="email"></a>
+        </div>
+    </div>
+</footer>
+<script src="js/testessay.js"></script>
+<script src="js/essay.js"></script>
+</body>
+</html>
