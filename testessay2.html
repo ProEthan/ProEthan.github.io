@@ -100,31 +100,31 @@
                         <p>
                             sqlplus / as sysdba<br><br>
 							SQL> conn scott/tiger<br><br>
-							<img src="images/001.png" width="334" height="100" style="margin: 10px 10px;"><br><br>
+							<img src="images/a001.png" width="334" height="100" style="margin: 10px 10px;"><br><br>
 							<p>网上有许多 @H:\app\oracleuser\product\12.1.0\db_1\RDBMS\ADMIN\scott.sql 的解决方案，发现于我并没有什么卵用</p><br><br>
 							于是乎进行了以下尝试：<br><br>
 							SQL> alter user scott account unlock identified by tiger;<br><br>
-							<img src="images/02.png" width="334" height="122" style="margin: 10px 10px;"><br><br>
+							<img src="images/a02.png" width="334" height="122" style="margin: 10px 10px;"><br><br>
 							神马情况！难道没有SCOTT用户？用sql查了下，确实没查到（不是没有）：<br><br>
 							SQL> select username from dba_users where username like 'SCOTT';<br><br>
-							<img src="images/000.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
+							<img src="images/a000.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
 							 哦，那我就自己建个吧（当时想多了o.o):<br><br>
 							 SQL> create user scott identified by tiger;<br><br>
-							 <img src="images/03.png" width="334" height="130" style="margin: 10px 10px;"><br><br>
+							 <img src="images/a03.png" width="334" height="130" style="margin: 10px 10px;"><br><br>
 							 ，，，，，，<br><br>
 							 呵呵，刚刚接触12c的新手估计都会犯这样的错误吧。其实oracle 12c在结构上做出了调整，引入了CDB和PDB的概念。具体可以看下潇湘隐者的文章：<br><br>
 							 <a href="http://www.cnblogs.com/kerrycode/p/3386917.html">http://www.cnblogs.com/kerrycode/p/3386917.html</a>
 							 <br><br>
 							 其实，我刚才的操作是在CDB中的操作，用sys默认登录的是CDB,但是如果想在CDB中创建用户（可以理解为公共用户）的话，那么必须在用户名前面加上“c##”：<br><br>
 							 SQL> create user c##joker identified by joker;<br><br>
-							 <img src="images/04.png" width="334" height="100" style="margin: 10px 10px;"><br><br>
+							 <img src="images/a04.png" width="334" height="100" style="margin: 10px 10px;"><br><br>
 							 oracle 这么做的目的是为了区分CDB的用户（前面带“c##”的用户）和PDB用户。那么问题来了，如何使用普通用户呢？网上查阅了很多资料，但都是说不清楚，今天总结下吧。<br><br>
                         </p>
 						<h3>二、使用普通用户</h3><br><br>
                         <p>
                             其实，oracle 12c的普通用户必须在PDB下使用，PDB可以自己创建，也可以使用12c自带的。首先，查看下12c自带的PDB吧：<br><br>
                             SQL>  select con_id, dbid, guid, name , open_mode from v$pdbs;<br><br>
-							<img src="images/05.png" width="334" height="222" style="margin: 10px 10px;"><br><br>
+							<img src="images/a05.png" width="334" height="222" style="margin: 10px 10px;"><br><br>
                             要想链接到PDBORCLS，必须要在\app\oracleuser\product\12.1.0\db_1\NETWORK\ADMIN\tns.ora文件下加入如下内容：<br><br>
 							PDBORCLS =<br>
 								(DESCRIPTION =<br>
@@ -138,20 +138,20 @@
 							首先，要启动PDBORCLS，先用sys登录到CDB，进行如下操作：<br><br>
 							SQL> alter session set container = PDBORCLS;<br><br>
 							SQL> STARTUP<br><br>
-							<img src="images/06.png" width="334" height="166" style="margin: 10px 10px;"><br><br>
+							<img src="images/a06.png" width="334" height="166" style="margin: 10px 10px;"><br><br>
 							这样我们就可以用sys登录到PDBORCLS了：<br><br>
 							SQL> conn sys@pdborcls/admin  as sysdba<br><br>
-							<img src="images/07.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
+							<img src="images/a07.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
 							我们查一下用没有SCOTT用户：<br><br>
 							SQL> select username from dba_users where username like '%SCOTT%';<br><br>
-							<img src="images/08.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
+							<img src="images/a08.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
 							原来，SCOTT在PDBORCLS下。<br><br>
 							SQL> alter user scott account unlock identified by tiger;<br><br>
-							<img src="images/09.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
+							<img src="images/a09.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
 							SQL> conn scott@pdborcls/tiger<br><br>
-							<img src="images/10.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
+							<img src="images/a10.png" width="334" height="88" style="margin: 10px 10px;"><br><br>
 							SQL> select ename,empno,job from emp offset 5 rows fetch next 5 rows only;<br><br>
-							<img src="images/11.png" width="334" height="155" style="margin: 10px 10px;"><br><br>
+							<img src="images/a11.png" width="334" height="155" style="margin: 10px 10px;"><br><br>
 							这样，我们就可以像11g那样使用像scott这样的普通用户了！<br><br>
                         </p>
 						<h3>三、自动启动PDB</h3><br><br>
@@ -164,13 +164,13 @@
 							5   EXECUTE IMMEDIATE 'alter pluggable database all open';  <br>
 							6   END open_all_pdbs;  <br>
 							7   /<br><br>
-							<img src="images/12.png" width="334" height="155" style="margin: 10px 10px;"><br><br>
+							<img src="images/a12.png" width="334" height="155" style="margin: 10px 10px;"><br><br>
 							SQL> shutdown immediate<br><br>
-							<img src="images/13.png" width="334" height="122" style="margin: 10px 10px;"><br><br>
+							<img src="images/a13.png" width="334" height="122" style="margin: 10px 10px;"><br><br>
 							SQL> startup<br><br>
-							<img src="images/14.png" width="334" height="155" style="margin: 10px 10px;"><br><br>
+							<img src="images/a14.png" width="334" height="155" style="margin: 10px 10px;"><br><br>
 							SQL> conn scott@pdborcls/tiger<br><br>
-							<img src="images/15.png" width="334" height="77" style="margin: 10px 10px;"><br><br>
+							<img src="images/a15.png" width="334" height="77" style="margin: 10px 10px;"><br><br>
 						</p>
 						<p>关于限制模式(restrict mode)的问题可以参见这篇博客~<br><br>
 							 <a href="https://blog.csdn.net/mengyan_0808/article/details/5870291">关于：无法连接到数据库实例: ORA-01035: ORACLE only available to users with RESTRICTED SESSION privilege</a>
